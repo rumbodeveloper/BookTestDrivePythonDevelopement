@@ -5,12 +5,20 @@
 Date = '13/1/18'
 '''
 
+class DiccOrderedKeys(dict):
+    '''Esta clase es una forma facil de obtener un diccionario y un argumento con sus claves ordenadas'''
+    @property
+    def ordered_keys(self):
+        return sorted(list(self.keys()))
+
+
+
 
 class Stock:
     def __init__(self, symbol):
         self.symbol = symbol
-        self.price_history = {}
-        self.ordered_timestamps = []
+        self.price_history = DiccOrderedKeys()
+
 
     def update(self, timestamp, price):
         if price < 0:
