@@ -66,16 +66,16 @@ class StockTrendTestOrdered(unittest.TestCase):
         pass
 
 
-
 class StockNotOrderedUpdates(unittest.TestCase):
     def setUp(self):
-        self.goog=Stock('GOOG')
+        self.goog = Stock('GOOG')
 
     def test_Stock_price_returns_latest_update(self):
-        self.goog.update(datetime(2014,2,14),10)
+        self.goog.update(datetime(2014, 2, 14), 10)
         self.goog.update(datetime(2014, 2, 11), 8)
         self.goog.update(datetime(2014, 2, 10), 7)
-        self.assertEqual(10,self.goog.price,msg="Stock doesn't returns latest price")
+        self.assertEqual(10, self.goog.price, msg="Stock doesn't returns latest price")
+
 
 class StockTrendTestNotOrdered(unittest.TestCase):
 
@@ -101,7 +101,6 @@ class StockTrendTestNotOrdered(unittest.TestCase):
 
     def tearDown(self):
         pass
-
 
 
 if __name__ == '__main__':
